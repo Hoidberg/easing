@@ -29,13 +29,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 -- c = change == ending - beginning
 -- d = duration (total time)
 
-local pow = math.pow
-local sin = math.sin
-local cos = math.cos
-local pi = math.pi
-local sqrt = math.sqrt
-local abs = math.abs
-local asin  = math.asin
+for k,v in next, math do
+	getfenv()[k] = v
+end
 
 local function linear(t, b, c, d)
   return c * t / d + b
